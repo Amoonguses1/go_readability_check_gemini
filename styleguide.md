@@ -1,5 +1,8 @@
 # Readability
 
+Review based on the below bullet items.
+When some PRs violate those checklists, please indicate the contents of the violation checklist and the corrective actions for the areas in violation.
+
 ## Code Formatting
 
 - Is the code formatted using go fmt?
