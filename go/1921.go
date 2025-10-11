@@ -11,19 +11,18 @@ import "sort"
 // The function returns the maximum number of monsters the player can eliminate before any monster arrives.
 func eliminateMaximum(dist []int, speed []int) int {
 	arrivalTimes := make([]int, len(dist))
-	for i := 0; i < len(dist); i++ {
-		arrivalTimes[i] = (dist[i] + speed[i] - 1) / speed[i]
+	for i, d := range dist {
+		// Calculate arrival time: ceil(distance / speed) using integer arithmetic.
+		arrivalTimes[i] = (d + speed[i] - 1) / speed[i]
 	}
 	sort.Ints(arrivalTimes)
 
-	eliminated := 0
 	for curMinute, arrival := range arrivalTimes {
-		// If any monster arrives before or at the current minute, the game ends.
+		// If a monster arrives at or before we can eliminate it, the game ends.
 		if arrival <= curMinute {
-			break
+			return curMinute
 		}
-		eliminated++
 	}
-
-	return eliminated
+	// If the loop completes, we can eliminate all monsters.
+	return len(dist)
 }
