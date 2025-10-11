@@ -1,0 +1,30 @@
+name: 'Automate Gemini Re-Review'
+
+# Trigger the workflow on 'push' events
+on:
+  push:
+    branches:
+      - '**' # Triggers on push to any branch (including PR branches)
+
+# Define the job
+jobs:
+  run_gemini_re_review:
+    # Ensure this job only runs if the push is part of a Pull Request context
+    # This prevents it from running on pushes to the main branch or standalone branches
+    if: github.event.pull_request.number != null
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code (Optional but good practice)
+        uses: actions/checkout@v4
+        
+      - name: Post /gemini review command to PR
+        # We use a third-party action to post a comment to the PR
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          # The PR number where the comment should be posted
+          issue-number: ${{ github.event.pull_request.number }}
+          # The command to invoke Gemini Code Assist
+          body: '/gemini review'
+          # GitHub Token (default token has permission to comment on PRs)
+          token: ${{ secrets.GITHUB_TOKEN }}
