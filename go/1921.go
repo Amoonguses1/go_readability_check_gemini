@@ -9,7 +9,7 @@ import "sort"
 // A player can eliminate at most one monster per minute, starting from minute 0.
 // A monster reaches the city at time ceil(dist[i] / speed[i]).
 // The function returns the maximum number of monsters the player can eliminate before any monster arrives.
-func eliminateMaximum(dist []int, speed []int) int {
+func EliminateMaximum(dist []int, speed []int) int {
 	arrivalTimes := make([]int, len(dist))
 	for i, d := range dist {
 		// Calculate arrival time: ceil(distance / speed) using integer arithmetic.
