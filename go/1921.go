@@ -26,3 +26,11 @@ func EliminateMaximum(dist []int, speed []int) int {
 	// If the loop completes, we can eliminate all monsters.
 	return len(dist)
 }
+
+func main() {
+	// Example usage:
+	dist := []int{1, 3, 4}
+	speed := []int{1, 1, 1}
+	result := EliminateMaximum(dist, speed)
+	println(result) // Output: 3
+}
