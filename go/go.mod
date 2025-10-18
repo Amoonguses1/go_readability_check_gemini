@@ -1,3 +1,3 @@
-module gemini_test
+module geminitest
 
 go 1.22.5
