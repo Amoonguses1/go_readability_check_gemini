@@ -1,5 +1,12 @@
 package main
 
+// Definition for a binary tree node.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 // Find a 2D array answer of size n where answer[i] = [mini, maxi]:
 //
 // mini is the largest value in the tree that is smaller than or equal to queries[i].
