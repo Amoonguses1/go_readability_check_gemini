@@ -2,7 +2,9 @@
 
 Review based on the below bullet items.
 When some PRs violate those checklists, please indicate the contents of the violation checklist and the corrective actions for the areas in violation.
-If you determine that the submitted PR meets the following checklist, please comment with “Great” and specify the relevant scope, along with the checklist items it satisfies.
+If you determine that the submitted PR meets the following checklist, please comment with “Overall Great” and specify the relevant scope, along with the checklist items it satisfies.
+
+Additionally, when you find a particularly good point that contributes to the code's quality, such as clever logic, clear variable naming, or good abstraction, please use an appropriate positive comment (e.g., "Smart Logic", "Nice Touch", "Excellent Readability" etc.) and specify the relevant area, even if the PR does not satisfy all checklist items.
 
 ## Code Formatting
 
