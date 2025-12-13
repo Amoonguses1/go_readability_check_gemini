@@ -18,6 +18,7 @@ If you find any part that satisfies an item on the checklist, please add a comme
 ## Comments
 
 - Are exported functions, types, constants, and variables documented with clear, concise comments?
+  - **Clarification**: Documentation comments that concisely explain the function's purpose and rationale (the "why") are considered sufficient.
 - Are documentation comments placed immediately before the declaration?
 - Are complex logic and design decisions clearly explained?
 - Do comments focus on explaining "why" rather than "what"?
@@ -64,6 +65,7 @@ If you find any part that satisfies an item on the checklist, please add a comme
 - Are variable names short and meaningful?
 - Is variable scope minimized where possible?
 - Are zero values relied upon instead of explicit initialization when appropriate?
+  - **Clarification**: Leveraging Go's zero-value initialization (e.g., `var total int`) is preferred over explicit assignments.
 - If shadowing is used, is it done intentionally and clearly?
 - Are variable names that shadow standard library packages avoided (except in very limited scope)?
 
@@ -92,14 +94,19 @@ If you find any part that satisfies an item on the checklist, please add a comme
 - Are tests written? (unit, integration, etc.)
 - Do tests cover a wide range of cases?
 - Is the purpose and rationale of the code clear to readers?
+  - **Clarification**: If the purpose and rationale are concisely explained in documentation comments, it is considered sufficient.
 - Is code written as simply as possible to achieve its purpose?
 - Does code maintain a high signal-to-noise ratio?
+  - **Clarification**: Introducing a function with a single, clear purpose is considered to maintain a high signal-to-noise ratio across the overall diff.
 - Is code written to be easily maintainable?
+  - **Clarification**: Use of standard libraries, logical structure, and descriptive variable names contribute to high maintainability.
 - Does the code achieve its goals with the simplest solution in terms of behavior and performance?
+  - **Clarification**: Common algorithms like sorting followed by a single loop are considered simple and effective in terms of behavior and performance.
 - When multiple valid options exist, is the most idiomatic one chosen?
 - Are core language constructs (channels, slices, maps, loops, structs) preferred over unnecessary abstractions?
 - Are all source files gofmt compliant?
 - Is camelCase or MixedCaps used for multi-word names, not snake_case?
+  - **Clarification**: Appropriate use of `camelCase` or `MixedCaps` is considered to enhance readability.
 - If a line feels too long, is the code refactored rather than simply split?
 - Are names chosen to avoid repetition in usage context?
 - Are these guidelines learned and followed until readability is second nature?
